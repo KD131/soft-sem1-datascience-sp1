@@ -6,9 +6,11 @@ The initial data was given in a spreadsheet with student and company names. I th
 
 We clean the data by removing columns that have 90% missing data, all the same data (or close), and just columns I didn't think we'd need. Furthermore, later in the notebook when we take a closer look at the `employee` column, we will note that two values are missing. One of those values was because the API returned the version of a company listed as being bankrupt or no longer functional. In any case, we replace those values with the *median*. Not the *mean* because it is **heavily** skewed thanks to Novo Nordisk being a gigantic company.
 
-We use [geopy](https://pypi.org/project/geopy/) (which in turn uses [Nominatim](https://nominatim.openstreetmap.org/ui/search.html)) to get geographical coordinates based on the street address. Those coordinates are then plotted on a map using [Folium](https://python-visualization.github.io/folium/) with information about the companies, like their names, added.
+We use [geopy](https://pypi.org/project/geopy/) (which in turn uses [Nominatim](https://nominatim.openstreetmap.org/ui/search.html)) to get geographical coordinates based on the street address. This data is also saved to a JSON file to avoid requesting the same data from the API when the code is rerun. This is in compliance with Nominatum's [terms of service](https://operations.osmfoundation.org/policies/nominatim/). Those coordinates are then plotted on a map using [Folium](https://python-visualization.github.io/folium/) with information about the companies, like their names, added.
 
 We find the companies' website and scrape them using [beautifulsoup4](https://pypi.org/project/beautifulsoup4/), retrieve all their text paragraphs, and transform them into *vectors*. We then use *cosine similarity* to compare the companies to each other and see the ones most closely related, and find the most relevant to a search query.
+
+The scraped text data is again saved to JSON to avoid further requests.
 
 Finally, we explore the descriptive statistics and distribution of the `employees` column, seeing as it is basically the only numerical data we have. We discover that the mean is heavily skewed by outliers, so we clean the data by removing those. Even still, the dataset has enormous variance because our sample size is so small. We plot the frequency distribution using [seaborn](https://seaborn.pydata.org/).
 
