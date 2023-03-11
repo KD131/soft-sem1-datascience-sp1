@@ -1,3 +1,16 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [SP1](#sp1)
+  - [Process](#process)
+  - [Reflection](#reflection)
+  - [Status](#status)
+- [SP2](#sp2)
+  - [What did I do?](#what-did-i-do)
+  - [Methods](#methods)
+  - [Challenges](#challenges)
+  - [Accuracy](#accuracy)
+  - [Improvements](#improvements)
+
 # SP1
 This project is centred around companies that fellow students have previously interned with as part of the school program. The goal of the project is to create some sort of model for determining which company is the best *fit* given some profile parameters.
 
@@ -25,3 +38,33 @@ While it was interesting working with data that may be useful for us in our sear
 I didn't finish every task, sadly. I didn't integrate categorical encoding properly, and I didn't get to explore if any values were correlated.
 
 Given how limited our dataset is, both in sample and feature size, I am unsure how good the results would be. There's not much to compare.
+
+# SP2
+The second part of the project centred around acquiring more numerical data and using it in machine learning algorithms.
+
+## What did I do?
+In this exercise, we got some more numerical data from [Proff.dk](https://proff.dk/), specifically more accurate data regarding no. employees and financial reports dating back some years.
+
+I then plotted the data to investigate it, and used that financial data to create a model for a specific company that can predict their profits for a given year.
+
+I unfortunately did not have time to do any classification for task 3 of the assignment. I will do it soon, but at the time of hand-in, it has not been done.
+
+## Methods
+We do not have access to the Proff.dk API, so I instead built a web-scraper to fetch the data, I wanted. Like my other functions that fetch data from somewhere, I save it to a JSON file, so that it doesn't need to be fetched every time the code is run.
+
+I used a **LinearRegression** model to predict a company's profits given a year. The model is trained on that compnay's prior finances each year, so it makes sense to just plot a line with the trend over the years.
+
+## Challenges
+The webscraper took way longer than anticipated to create. I build a Pandas dataframe from the finance table and clean it and process it so it contains what I want. That took some bug fixing.
+
+When reading the JSON file, it would insert the rows in incorrect order which also took some time to figure out. That could've been avoided by not saving everything to JSON and then reading it from a file, but it makes the program run faster and saves on network calls.
+
+I had some doubts on what the right way to train the linear regression model on profits would be. It makes sense to build a more general model that takes more parameters. However, the companies vary wildly in their finances, and we also don't have much other data to use.
+
+So I trained a model for specific companies using that company's financial data for the previous years.
+
+## Accuracy
+Because I only have a max of 9 years history for the linear regression model, there's not a lot of data to do a *train-test split* on. I therefore do not have any test data to actually test the accuracy of the model.
+
+## Improvements
+If we had more data to generalise the model instead of being specific to a company, and we had more companies, we could more confidently split the data to actually test the accuracy.
