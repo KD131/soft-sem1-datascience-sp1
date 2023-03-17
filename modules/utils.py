@@ -15,6 +15,12 @@ def json_or_get(path, keys, get_data):
     
     :returns: Data in a dict.
     """
+    # You could make it so only the keys provided are retrieved in the final dict.
+    # You would make a clone that gets the data from the existing dict if the keys match, and otherwise finds new data.
+    # Any key in the original that was not provided to be retrieved would be ignored.
+    # New entries would be added to the existing dict so that it can be saved to the file.
+    # Alternatively, you could save the returned dict to file, essentially deleting any data that was not retrieved.
+    
     # init empty dict
     data = {}
     changed = False
