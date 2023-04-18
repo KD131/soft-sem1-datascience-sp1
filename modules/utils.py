@@ -21,6 +21,9 @@ def json_or_get(path, keys, get_data):
     # New entries would be added to the existing dict so that it can be saved to the file.
     # Alternatively, you could save the returned dict to file, essentially deleting any data that was not retrieved.
     
+    if isinstance(keys, str):
+        keys = [keys]
+    
     # init empty dict
     data = {}
     changed = False
