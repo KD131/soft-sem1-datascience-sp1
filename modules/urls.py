@@ -1,4 +1,4 @@
-proff_urls = [
+proff = [
     'https://proff.dk/firma/dynatest-as/ballerup/producenter/0OCZCAI016D/',
     'https://proff.dk/firma/eriksholm-research-centre/snekkersten/producenter/GL78U2I016D/',
     'https://proff.dk/firma/formpipe-software-as/ballerup/internetdesign-og-programmering/0HDD4NI0C2C/',
@@ -26,7 +26,7 @@ proff_urls = [
     'https://proff.dk/firma/firi-filial-af-firi-as/k%C3%B8benhavn-%C3%B8/anden-forretningsservice/0PGU1VI10LQ/'
 ]
 
-website_urls = [
+websites = [
     'https://dynatest.com/',
     'https://www.eriksholm.com/',
     'https://www.formpipe.com/',
