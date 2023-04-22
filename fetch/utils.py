@@ -3,7 +3,7 @@ from os.path import exists
 from typing import Callable, Iterable, Union
 
 
-def json_or_fetch(keys: Union[str, Iterable[str]], fetcher: Callable, path: str=None) -> dict:
+def json_or_fetch(keys: Union[str, Iterable[str]], fetcher: Callable, path: str=None, reload: bool=False) -> dict:
     """
     Loads JSON data from path, then iterates through the keys collection to see if any data is not present.
     
@@ -11,9 +11,10 @@ def json_or_fetch(keys: Union[str, Iterable[str]], fetcher: Callable, path: str=
 
     If data was added, it saves the data to the path as a new JSON file.
 
-    :param path: Path to the JSON file.
     :param keys: Iterable of keys with which to store and get data.
     :param fetcher: Callback function for retrieving data. Should take a key as argument.
+    :param path: Path to the JSON file.
+    :param reload: If True, will reload data from the fetcher callback even if it is already in the JSON file.
     
     :returns: Data in a dict.
     """
@@ -34,9 +35,9 @@ def json_or_fetch(keys: Union[str, Iterable[str]], fetcher: Callable, path: str=
         with open(path, encoding='utf-8') as f:
             data = json.load(f)
 
-    # if data from collection is not in the existing json file, we get data from callback
+    # if data from collection is not in the existing json file (or we reload), we get data from callback
     for key in keys:
-        if key not in data.keys():
+        if key not in data.keys() or reload:
             data[key] = fetcher(key)
             changed = True
 
