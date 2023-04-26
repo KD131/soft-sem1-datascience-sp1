@@ -14,6 +14,9 @@
   - [3.1. Data](#31-data)
   - [3.2. Processing](#32-processing)
   - [3.3. Prototype](#33-prototype)
+- [4. SP4](#4-sp4)
+  - [4.1. Setup](#41-setup)
+  - [4.2. Status](#42-status)
 
 ## 1. SP1
 This project is centred around companies that fellow students have previously interned with as part of the school program. The goal of the project is to create some sort of model for determining which company is the best *fit* given some profile parameters.
@@ -90,3 +93,37 @@ I showed a small test of processing a bit of text, but I didn't have a use for p
 The task was to make a prototype for a *typical NLP implementation*. I couldn't come up with a good idea for an application, and frankly, I didn't have a ton of time with two other projects to do over the Easter **holiday**, one of them being an **exam** that I've then not had time to work on.
 
 Instead I just showed a word cloud of the "Novo Nordisk" Wikipedia page.
+
+## 4. SP4
+This assignment is about visualisation of data using various graphs and exposing them in some sort of frontend so users can explore the data.
+
+I've decided to use [Streamlit](https://streamlit.io/) because it's an easy way to build a webapp in Python that also integrates all manner of graph libraries.
+
+### 4.1. Setup
+To run it, install Streamlit.
+
+```shell
+pip install streamlit
+```
+
+ Then run the main page.
+
+ ```shell
+ streamlit run 9_🏠Visualisation.py
+ ```
+
+ or 
+
+ ```shell
+ streamlit run https://raw.githubusercontent.com/KD131/soft-sem1-datascience-sp1/main/9_%F0%9F%8F%A0Visualisation.py
+ ```
+
+ *For some reason, it doesn't read the `pages` folder when using the URL from GitHub, so run it from a local clone.*
+
+ ### 4.2. Status
+ **I'm extremely not done. I'm very sorry, but I'll get it done soon, around Thursday.**
+
+ - [x] DataFrame table
+ - [ ] Graph
+ - [ ] Map
+ - [ ] Maybe some other fun stuff
