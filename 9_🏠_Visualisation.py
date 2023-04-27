@@ -9,10 +9,8 @@ def load_data():
 
 st.session_state.df = load_data()
 
-# st.sidebar.divider()
-
 st.write("# Visualisation using Streamlit")
-st.markdown(
+st.write(
     """
     This is the main page of the application.
     
@@ -23,4 +21,3 @@ st.markdown(
     This is extremely inconvenient so I might stop doing that.
     """
 )
-
