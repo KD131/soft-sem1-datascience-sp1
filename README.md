@@ -109,7 +109,7 @@ pip install streamlit
  Then run the main page.
 
  ```shell
- streamlit run 9_🏠Visualisation.py
+ streamlit run 9_🏠_Visualisation.py
  ```
 
  or 
@@ -125,5 +125,5 @@ pip install streamlit
 
  - [x] DataFrame table
  - [ ] Graph
- - [ ] Map
+ - [x] Map
  - [ ] Maybe some other fun stuff
