@@ -124,6 +124,6 @@ pip install streamlit
  **I'm extremely not done. I'm very sorry, but I'll get it done soon, around Thursday.**
 
  - [x] DataFrame table
- - [ ] Graph
+ - [x] Graph
  - [x] Map
  - [ ] Maybe some other fun stuff
