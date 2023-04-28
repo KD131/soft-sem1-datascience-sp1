@@ -121,9 +121,11 @@ pip install streamlit
  *For some reason, it doesn't read the `pages` folder when using the URL from GitHub, so run it from a local clone.*
 
  ### 4.2. Status
- **I'm extremely not done. I'm very sorry, but I'll get it done soon, around Thursday.**
+ I got the basics down, but it'd be cool to try out more plotting libraries and more interesting aspects of the data to show, though I don't know what that would be exactly.
 
- - [x] DataFrame table
+ The map is very disappointing seeing as the height of the hexagons has nothing to do with the individual company. I tried hard to fix it, but no such luck.
+
+ - [x] Table
  - [x] Graph
  - [x] Map
  - [ ] Maybe some other fun stuff
