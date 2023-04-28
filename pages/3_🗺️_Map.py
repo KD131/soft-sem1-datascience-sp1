@@ -1,15 +1,12 @@
+import pandas as pd
 import pydeck as pdk
 import streamlit as st
-import pandas as pd
+
+from modules.streamlit_utils import load_data
+
+df = load_data()
 
 st.header("Map")
-if not 'df' in st.session_state:
-    # st.write("""Please go to <a target="_self" href="/">main page</a> to load data.""", unsafe_allow_html=True)
-    st.warning("Please go to main page to load data.", icon='🔥')
-    st.stop()
-
-df = st.session_state.df
-
 st.write("Here we'll show the locations of the various companies that we've collected. " \
     "We will use both the st.map() function which generates a scatter plot as well as PyDeck for more advanced stuff.")
 

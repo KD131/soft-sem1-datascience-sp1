@@ -1,14 +1,10 @@
 import streamlit as st
 
+from modules.streamlit_utils import load_data
+
+df = load_data()
+
 st.header("Graph")
-# I know this should be a function at this point.
-if not 'df' in st.session_state:
-    # st.write("""Please go to <a target="_self" href="/">main page</a> to load data.""", unsafe_allow_html=True)
-    st.warning("Please go to main page to load data.", icon='🔥')
-    st.stop()
-
-df = st.session_state.df
-
 "Let's plot a graph of the number of employees in each company."
 "We'll do a simple bar chart with st.bar_chart(). Internally it uses Altair which you can also call explicitly to customise it more."
 
