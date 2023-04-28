@@ -15,4 +15,4 @@ col3.metric(label="Median number of employees", value=round(df['employees'].medi
 
 st.bar_chart(df['employees'])
 
-f"*{df['employees'].isna().sum()} of those companies have no data on number of employees and aren't counted.*"
+f"*\* {df['employees'].isna().sum()} of those companies have no data on number of employees and aren't counted.*"
