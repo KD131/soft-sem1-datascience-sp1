@@ -9,11 +9,13 @@ if not 'df' in st.session_state:
     st.stop()
 
 df = st.session_state.df
+
 st.write("Here we'll show the locations of the various companies that we've collected. " \
     "We will use both the st.map() function which generates a scatter plot as well as PyDeck for more advanced stuff.")
 
 st.subheader("st.map()")
 st.write("This is a simple scatter plot, but it's super easy to create. As long as the DataFrame has columns named 'lat'/'latitude' and 'lon'/'longitude', it will work.")
+st.write("Internally it uses PyDeck, which we'll look at next.")
 st.map(df)
 
 st.subheader("PyDeck")
