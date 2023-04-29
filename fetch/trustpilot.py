@@ -27,7 +27,7 @@ def trustpilot(url: str, page_limit: Optional[int]=10) -> list:
             title = div.select_one('h2')
             title = title.text if title else None
             # Find the first p tag within the div
-            body = div.select_one('p')
+            body = div.find('p', attrs={'data-service-review-text-typography': 'true'})
             body = body.text if body else None
             rating = div.select_one('div.styles_reviewHeader__iU9Px')
             rating = int(rating['data-service-review-rating']) if rating else None
