@@ -5,7 +5,7 @@ import wikipedia
 # wiki_wiki = wikipediaapi.Wikipedia('da')
 wikipedia.set_lang('da')
 
-def wikipedia(company):
+def wikipedia_page(company):
     try:
         page = wikipedia.page(company)
         print(company, page.url)
